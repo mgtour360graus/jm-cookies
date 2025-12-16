@@ -1,14 +1,22 @@
-
+import { useState } from 'react'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
-import { useState } from 'react'
+import { getSession, logout } from './services/auth'
 
 export default function App(){
-  const [user, setUser] = useState(localStorage.getItem('jm_user'))
+  const [session, setSession] = useState(()=>getSession())
 
-  if(!user){
-    return <Login onLogin={setUser} />
+  if(!session){
+    return <Login onSuccess={setSession} />
   }
 
-  return <Dashboard />
+  return (
+    <Dashboard
+      session={session}
+      onLogout={()=>{
+        logout()
+        setSession(null)
+      }}
+    />
+  )
 }
