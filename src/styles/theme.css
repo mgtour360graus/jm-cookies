@@ -1,0 +1,29 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #FBEFEF;
+  color: #5A2A2A;
+}
+header {
+  background: #D97878;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+button {
+  background: #5A2A2A;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
